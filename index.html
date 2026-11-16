@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 2 on the Charts - 33 and the Turds</title>
+    <!-- Include Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 80px 16px 24px 16px; /* Added top padding so content clears the top sticky bar */
+            box-sizing: border-box;
+        }
 
+        /* Clickable Main Title Link */
+        h1.album-title {
+            font-size: 1.6rem;
+            margin: 24px 0 20px 0;
+            text-align: center;
+        }
+        h1.album-title a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+        h1.album-title a:hover {
+            color: #007aff;
+            text-decoration: underline;
+        }
+
+        /* Compact Player Card */
+        .player-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 16px;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .album-art {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 12px auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        h2 {
+            font-size: 1.1rem;
+            margin: 0 0 4px 0;
+            text-align: center;
+        }
+        p.artist {
+            color: #aaa;
+            margin: 0 0 12px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        :root {
+            --plyr-color-main: #007aff;
+        }
+        .plyr {
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        /* Button Group Layout */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Main Download Button */
+        .download-btn {
+            flex: 1;
+            background-color: #007aff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 0;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-align: center;
+            box-sizing: border-box;
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Circular Social Media Icon Buttons */
+        .icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+            flex-shrink: 0;
+        }
+        .icon-btn:hover {
+            transform: scale(1.08);
+        }
+        .icon-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        /* Brand Colors */
+        .facebook-icon {
+            background-color: #1877F2;
+        }
+        .facebook-icon:hover {
+            background-color: #145dbf;
+        }
+        .youtube-icon {
+            background-color: #FF0000;
+        }
+        .youtube-icon:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Sticky Controls Bar at the Top -->
+    <div id="sticky-player-bar" style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(30, 30, 30, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #333; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; z-index: 1000; box-shadow: 0 4px 16px rgba(0,0,0,0.6);">
+        <div style="display: flex; align-items: center; gap: 12px; overflow: hidden;">
+            <span id="sticky-track-title" style="font-size: 0.9rem; font-weight: bold; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Select a track to play</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button id="sticky-play-btn" style="background: #007aff; border: none; color: #fff; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">▶</button>
+        </div>
+    </div>
+
+    <!-- Track 1 Card (Now Nothing Personal) -->
+    <div class="player-card">
+        <img src="Nothing-Personal-Cover.jpg" alt="Nothing-Personal Artwork" class="album-art">
+        <h2>Nothing Personal</h2>
+        <p class="artist">davebondband</p>
+        <audio class="player" controls>
+            <source src="Nothing-Personal.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="button-group">
+            <a href="Nothing-Personal.mp3" download class="download-btn">Download Track</a>
+            <a href="https://youtu.be/Dqcn1ocO10Q" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Track 2 Card -->
+    <div class="player-card">
+        <img src="Such-A-Long-Time-Cover.jpg" alt="Easy Street Artwork" class="album-art">
+        <h2>Such A Long Time</h2>
+        <p class="artist">davebondband</p>
+        <audio class="player" controls>
+            <source src="Break_The_Spell.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="button-group">
+            <a href="Break_The_Spell.mp3" download class="download-btn">Download Track</a>
+            <a href="https://youtu.be/d6iEj8uYo4o" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Track 3 Card -->
+    <div class="player-card">
+        <img src="Easy-Street-Cover.jpg" alt="Easy Street Artwork" class="album-art">
+        <h2>Easy Street</h2>
+        <p class="artist">davebondband</p>
+        <audio class="player" controls>
+            <source src="Easy-Street.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="button-group">
+            <a href="Easy-Street.mp3" download class="download-btn">Download Track</a>
+            <a href="https://youtu.be/xVtYVT0nY5Q" target="_blank" rel="noopener noreferrer" class="icon-btn youtube-icon" aria-label="Watch on YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545
